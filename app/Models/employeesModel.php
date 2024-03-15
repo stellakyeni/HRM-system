@@ -11,7 +11,7 @@ class employeesModel extends Model
     protected $table="employees";
     protected $fillable=[
         'first_name',
-        'last_name',
+        'last_name', 
         'employee_id',
         'national_id',
 

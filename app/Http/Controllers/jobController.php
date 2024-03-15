@@ -90,10 +90,9 @@ class jobController extends Controller
         Storage::disk('public')->put('documents/' . $documentName, file_get_contents($document));
 
         // Correct usage (creating an instance and calling update on it)
-        $jobTitleModel = jobTitleModel::find($id); // Assuming you have an instance with the given ID
-        $jobTitleModel->update(['column' => 'value']);
+        $jobTitle = jobTitleModel::find($id); // Assuming you have an instance with the given I
 
-        jobTitleModel::update([
+        $jobTitle->update([
             'job_title' => $request->job_title,
             'job_description' => $request->job_description,
             'job_specification' => $documentName,
@@ -102,7 +101,7 @@ class jobController extends Controller
         ]);
         $job_title = jobTitleModel::find($id);
         $job_title->update($validatedData);
-        return redirect()->route('job-titles')->with('success', 'Job Title Added');
+        return redirect()->route('job-titles')->with('success', 'Job Title updated');
     }
 
     //pay grade function Methods
@@ -137,7 +136,7 @@ class jobController extends Controller
     }
 
 
-
+  
 
 
     public function jobCategory()

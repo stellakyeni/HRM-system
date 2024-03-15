@@ -4,7 +4,41 @@ use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | Custom Name
+    |--------------------------------------------------------------------------
+    |
+    |
+     */
 
+    'webService' => 'http://light55:7047/BC220/WS/LIGHT%20MOTORCARS/Codeunit/BCPTTestSuite',
+    'webService2' => 'http://light55:7047/BC220/WS/LIGHT%20MOTORCARS/Codeunit/BCPTTestSuite',
+    'odataBaseUrl' => "http://light55:7048/BC220/ODataV4/Company('LIGHT%20MOTORCARS')/",
+    // C:\Portals\Portal Attachments
+    'storagePath' => 'C:\\Portals\\Portal Attachments\\',
+    'reportsPath' => 'C:\\Portals\\Portal Reports\\',
+    'domainUser' => "LIGHT:jinayako",
+    'WS_Debug' => env('WEBSERVICE_DEBUG'),
+    'url' => env('APP_URL'),
+    //
+    'kenyanNationalityCode' => 'KE',
+    'webServiceDebug' => env('WEBSERVICE_DEBUG'),
+    'companyName' => env('COMP_NAME', ''),
+    'company' => [
+        'name' => env('COMP_NAME', ''),
+        'email' => 'info@daystar.ac.ke',
+    ],
+    'metaDescription' => env('APP_NAME') . " for " . env('COMPANY_NAME') . ". Apply for jobs online",
+    'metaKeywords' => "jobs in kenya,daystar jobs,university,college,campus,best university in kenya,top university in kenya,best univerity,top university",
+
+    'storagePaths' => [
+        // 'userImages' => ["storePath" => "/users/images/","readPath" => "/storage/users/images/",'disk' => "public"],
+    ],
+    'errors' => [
+        'default' => 'Oops! something went wrong. Please try again. If the error persists, kindly contact the system administrator for help.',
+        'webservice' => 'Oops! there was an error with our web services. Please try again.',
+    ],
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -14,7 +48,7 @@ return [
     | framework needs to place the application's name in a notification or
     | any other location as required by the application or its packages.
     |
-    */
+     */
 
     'name' => env('APP_NAME', 'Laravel'),
 
@@ -27,7 +61,7 @@ return [
     | running in. This may determine how you prefer to configure various
     | services the application utilizes. Set this in your ".env" file.
     |
-    */
+     */
 
     'env' => env('APP_ENV', 'production'),
 
@@ -40,7 +74,7 @@ return [
     | stack traces will be shown on every error that occurs within your
     | application. If disabled, a simple generic error page is shown.
     |
-    */
+     */
 
     'debug' => (bool) env('APP_DEBUG', false),
 
@@ -53,7 +87,7 @@ return [
     | the Artisan command line tool. You should set this to the root of
     | your application so that it is used when running Artisan tasks.
     |
-    */
+     */
 
     'url' => env('APP_URL', 'http://localhost'),
 
@@ -68,7 +102,7 @@ return [
     | will be used by the PHP date and date-time functions. We have gone
     | ahead and set this to a sensible default for you out of the box.
     |
-    */
+     */
 
     'timezone' => 'UTC',
 
@@ -81,7 +115,7 @@ return [
     | by the translation service provider. You are free to set this value
     | to any of the locales which will be supported by the application.
     |
-    */
+     */
 
     'locale' => 'en',
 
@@ -94,7 +128,7 @@ return [
     | is not available. You may change the value to correspond to any of
     | the language folders that are provided through your application.
     |
-    */
+     */
 
     'fallback_locale' => 'en',
 
@@ -107,7 +141,7 @@ return [
     | data for your database seeds. For example, this will be used to get
     | localized telephone numbers, street address information and more.
     |
-    */
+     */
 
     'faker_locale' => 'en_US',
 
@@ -120,7 +154,7 @@ return [
     | to a random, 32 character string, otherwise these encrypted strings
     | will not be safe. Please do this before deploying an application!
     |
-    */
+     */
 
     'key' => env('APP_KEY'),
 
@@ -137,7 +171,7 @@ return [
     |
     | Supported drivers: "file", "cache"
     |
-    */
+     */
 
     'maintenance' => [
         'driver' => 'file',
@@ -153,19 +187,19 @@ return [
     | request to your application. Feel free to add your own services to
     | this array to grant expanded functionality to your applications.
     |
-    */
+     */
 
     'providers' => ServiceProvider::defaultProviders()->merge([
-            /*
-             * Package Service Providers...
-             */
+        /*
+         * Package Service Providers...
+         */
 
-            /*
-             * Application Service Providers...
-             */
+        /*
+         * Application Service Providers...
+         */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-            // App\Providers\BroadcastServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
@@ -180,7 +214,7 @@ return [
     | is started. However, feel free to register as many as you wish as
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
-    */
+     */
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,

@@ -119,7 +119,6 @@
             </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as: {{ Auth::user()->name }}</div>
-
             </div>
         @endauth
     </div>

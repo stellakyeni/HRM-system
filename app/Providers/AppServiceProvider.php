@@ -12,6 +12,10 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+        $this->app->singleton(BusinessCentralService::class, function ($app) {
+            return new BusinessCentralService();
+        });
+
     }
 
     /**

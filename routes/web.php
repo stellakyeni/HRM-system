@@ -1,9 +1,10 @@
 <?php
-use App\Http\Controllers\userController;
+use App\Http\Controllers\BusinessCentralController;
+use App\Http\Controllers\configurationController;
 use App\Http\Controllers\jobController;
 use App\Http\Controllers\organizationController;
 use App\Http\Controllers\qualificationController;
-use App\Http\Controllers\configurationController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+ */
+Route::get('/', function () {
+    return view('admin.admin_dashboard');
+
+});
 
 Route::post("/add-users", [userController::class, ('addUser')])->name("add-user");
 Route::get("/users", [userController::class, ('users')])->name("users");
@@ -31,7 +36,6 @@ Route::get('/edit-jobTitle/{id}', [jobController::class, 'editJobTitle'])->name(
 Route::put('/update-jobTitle/{id}', [jobController::class, 'updateJobTitle'])->name('update-jobTitle');
 Route::delete('/delete-jobtitle/{id}', [jobController::class, 'deleteJobTitle'])->name('delete-jobTitle');
 
-
 Route::get("/pay-grades", [jobController::class, ('payGrades')])->name("pay-grades");
 Route::post("/add-pay-grade", [jobController::class, ('storePayGrade')])->name("store-pay-grade");
 Route::get("/get-pay-grade", [jobController::class, ('payGrade')])->name("get-pay-grade");
@@ -41,16 +45,12 @@ Route::post("/add-job-category", [jobController::class, ('storeJobCategory')])->
 Route::get("/get-job-category", [jobController::class, ('jobCategories')])->name("get-job-category");
 Route::delete('/delete-jobCategory/{id}', [jobController::class, 'deleteJobCategory'])->name('delete');
 
-
 Route::get("/employment-status", [jobController::class, ('addEmploymentStatus')])->name("employment-status");
 Route::post("/add-employment-status", [jobController::class, ('storeEmploymentStatus')])->name("store-employment-status");
 Route::get("/get-employment-status", [jobController::class, ('employmentStatus')])->name("get-employment-status");
 Route::delete('/delete-employmentStatus/{id}', [jobController::class, 'deleteEmploymentStatus'])->name('delete-employementStatus');
 
 Route::get("/work-shifts", [jobController::class, ('workShifts')])->name("work-shifts");
-
-
-
 
 Route::get("/general-information", [organizationController::class, ('generalInformation')])->name("general-information");
 Route::get("/location", [organizationController::class, ('location')])->name("location");
@@ -66,7 +66,6 @@ Route::get("/licenses", [qualificationController::class, ('licenses')])->name("l
 Route::get("/nationalities", [qualificationController::class, ('nationalities')])->name("nationalities");
 Route::get("/languages", [qualificationController::class, ('languages')])->name("languages");
 
-
 Route::get("/optional-fields", [configurationController::class, ('optionalFields')])->name("optional-fields");
 Route::get("/custom-fields", [configurationController::class, ('customFields')])->name("custom-fields");
 Route::get("/data-imports", [configurationController::class, ('dataImports')])->name("data-imports");
@@ -76,14 +75,12 @@ Route::get("/termination-reason", [configurationController::class, ('termination
 Route::post("/add-employee", [configurationController::class, ('addEmployee')])->name("add-employee");
 Route::get("/add-employee", [configurationController::class, ('getEmployee')])->name("get-employee");
 Route::get("/employee-list", [configurationController::class, ('employeeList')])->name("employee-list");
+
 Route::delete('/delete-employee/{id}', [configurationController::class, 'deleteEmployee'])->name('delete-employee');
 Route::get('/edit-employee/{id}', [configurationController::class, 'editEmployee'])->name('edit-employee');
 Route::put('/update-employee/{id}', [configurationController::class, 'updateEmployee'])->name('update-employee');
 
 Route::get("/reports", [configurationController::class, ('reports')])->name("reports");
 
-
-Route::get('/', function () {
-    return view('admin.admin_dashboard');
-
-});
+//Business Central
+Route::get('/business-central-employee', [BusinessCentralController::class, 'employees'])->name('BC-employee-list');

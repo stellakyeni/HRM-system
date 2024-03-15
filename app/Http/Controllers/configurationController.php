@@ -40,7 +40,7 @@ class configurationController extends Controller
     {
         //return $request;
         $validatedData = $request->validate([
-
+ 
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'employee_id' => 'required|string|max:255',
@@ -74,7 +74,7 @@ class configurationController extends Controller
         employeesModel::create($validatedData);
         return redirect()->route('employee-list')->with('success', 'Employee Added');
     }
-
+ 
     public function getEmployee()
     {
         $countries = DB::table('countries')->orderBy('country_name', 'ASC')->get();
@@ -95,7 +95,7 @@ class configurationController extends Controller
         return view('pim.employee_list', compact('employees', 'totalEntries'));
     }
 
-    public function deleteEmployee($id)
+    public function deleteEmployee($id)  
     {
         employeesModel::find($id)->delete();
         return redirect()->back()->with('success', 'User has been deleted.');

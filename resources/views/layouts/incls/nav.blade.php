@@ -14,7 +14,7 @@
     </form>
 
     <!-- Navbar-->
-    @auth
+    <!-- @auth -->
         <div class="small" style="background-color: white;">{{ Auth::user()->name }}</div>
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
@@ -42,5 +42,5 @@
                 </ul>
             </li>
         </ul>
-    @endauth
+    <!-- @endauth -->
 </nav>

@@ -7,12 +7,14 @@
     "require": {
         "php": "^8.1",
         "barryvdh/laravel-dompdf": "^2.0",
-        "guzzlehttp/guzzle": "^7.2",
+        "guzzlehttp/guzzle": "^7.8",
+        "illuminate/database": "*",
         "laravel/fortify": "^1.19",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "league/flysystem": "^3.23"
+        "league/flysystem": "^3.23",
+        "saintsystems/odata-client": "^0.7.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

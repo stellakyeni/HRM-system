@@ -65,9 +65,16 @@
 
 </head>
 
-<body class="sb-nav-fixed">@include('layouts.incls.nav') <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">@include('layouts.incls.sidebar') </div>
-        <div id="layoutSidenav_content">@yield('content') <footer class="py-4 bg-light mt-auto">
+<body class="sb-nav-fixed">
+    @include('layouts.incls.nav')
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            @include('layouts.incls.sidebar')
+        </div>
+        <div id="layoutSidenav_content">
+            @yield('content')
+
+            <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
                         <div class="text-muted">Copyright &copy;

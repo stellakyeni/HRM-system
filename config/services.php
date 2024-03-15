@@ -12,7 +12,7 @@ return [
     | location for this type of information, allowing packages to have
     | a conventional file to locate the various service credentials.
     |
-    */
+     */
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
@@ -31,4 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'business_central' => [
+        'api_base_url' => env('BUSINESS_CENTRAL_API_BASE_URL', 'http://localhost:8080/BC220'),
+        'username' => env('BUSINESS_CENTRAL_USERNAME', ''),
+        'password' => env('BUSINESS_CENTRAL_PASSWORD', ''),
+    ],
 ];

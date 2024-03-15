@@ -1,5 +1,4 @@
 @extends('layouts.main')
-
 @section('content')
     <main>
         <div class="container-fluid px-4 mt-5">
@@ -12,7 +11,6 @@
                         <input type="text" name="skill_name"class="form-control" id="jobTitle"
                             placeholder="Enter Skill Name" required>
                     </div>
-
                     <div class="form-group">
                         <label for="currency">Description</label>
                         <input type="text" name="skill_description"class="form-control" id="currency_name"
